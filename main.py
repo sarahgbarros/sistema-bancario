@@ -19,14 +19,16 @@ while True :
     opcao = input(menu)
     
     if opcao == "d":
+       print(f"SAlDO ATUAL: R${saldo} ")
        valor = float(input("Informe o valor do depósito:"))
        if valor > 0 :
           saldo += valor
-          extrato += f"Depósito: R$ {valor:.2f}\n" 
+          extrato += f"Depósito: R${valor:.2f}\n" 
        else :
-           print("Operação falhou : O valor informado é invalido")  
+           print("Operação falhou: O valor informado é invalido")  
 
     elif opcao == "s":
+       print(f"SAlDO ATUAL:{saldo} ")
        valor = float(input("Informe o valor do saque:"))
        
        excedeu_saldo = valor > saldo
@@ -37,14 +39,14 @@ while True :
            print("Operação falhou: Saldo insuficiente")
          
        elif excedeu_limite :
-           print("Operação falhou: limite insuficiente")
+           print("Operação falhou: limite de saque insuficiente")
        
        elif excedeu_saque:
            print("Operação falhou: quantidade de saque excedida")
         
        elif valor > 0 :
            saldo -= valor
-           extrato += f"Saque : R$ {valor:.2f}\n"
+           extrato += f"Saque: R${valor:.2f}\n"
            numero_saque += 1
        else :
            print("Operação falhou : O valor informado é invalido") 
